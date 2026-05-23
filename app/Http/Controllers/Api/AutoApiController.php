@@ -10,13 +10,24 @@ class AutoApiController extends Controller
 {
     private function normalizeImage(?string $path): ?string
     {
-        if (!$path) return null;
+        if (!$path) {
+            return null;
+        }
+
         $path = str_replace('\\', '/', trim($path));
-        if ($path === '') return null;
-        if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://') || str_starts_with($path, '/')) {
+
+        if ($path === '') {
+            return null;
+        }
+
+        if (
+            str_starts_with($path, 'http://') ||
+            str_starts_with($path, 'https://')
+        ) {
             return $path;
         }
-        return '/' . ltrim($path, '/');
+
+        return url('/' . ltrim($path, '/'));
     }
 
     private function mapAuto(Auto $auto): array
@@ -49,21 +60,49 @@ class AutoApiController extends Controller
     public function index(Request $request)
     {
         $query = Auto::query();
-        foreach (['marka','allapot','kivitel','szin'] as $field) {
+
+        foreach (['marka', 'allapot', 'kivitel', 'szin'] as $field) {
             if ($request->filled($field)) {
                 $query->where($field, $request->string($field));
             }
         }
 
-        $autok = $query->orderByDesc('kiemelt')->orderByDesc('id')->get()->map(fn ($a) => $this->mapAuto($a));
+        $autok = $query
+            ->orderByDesc('kiemelt')
+            ->orderByDesc('id')
+            ->get()
+            ->map(fn ($a) => $this->mapAuto($a));
 
         return response()->json([
             'data' => $autok,
             'filters' => [
-                'markak' => Auto::query()->whereNotNull('marka')->where('marka', '!=', '')->distinct()->orderBy('marka')->pluck('marka'),
-                'allapotok' => Auto::query()->whereNotNull('allapot')->where('allapot', '!=', '')->distinct()->orderBy('allapot')->pluck('allapot'),
-                'kivitelek' => Auto::query()->whereNotNull('kivitel')->where('kivitel', '!=', '')->distinct()->orderBy('kivitel')->pluck('kivitel'),
-                'szinek' => Auto::query()->whereNotNull('szin')->where('szin', '!=', '')->distinct()->orderBy('szin')->pluck('szin'),
+                'markak' => Auto::query()
+                    ->whereNotNull('marka')
+                    ->where('marka', '!=', '')
+                    ->distinct()
+                    ->orderBy('marka')
+                    ->pluck('marka'),
+
+                'allapotok' => Auto::query()
+                    ->whereNotNull('allapot')
+                    ->where('allapot', '!=', '')
+                    ->distinct()
+                    ->orderBy('allapot')
+                    ->pluck('allapot'),
+
+                'kivitelek' => Auto::query()
+                    ->whereNotNull('kivitel')
+                    ->where('kivitel', '!=', '')
+                    ->distinct()
+                    ->orderBy('kivitel')
+                    ->pluck('kivitel'),
+
+                'szinek' => Auto::query()
+                    ->whereNotNull('szin')
+                    ->where('szin', '!=', '')
+                    ->distinct()
+                    ->orderBy('szin')
+                    ->pluck('szin'),
             ],
         ]);
     }
