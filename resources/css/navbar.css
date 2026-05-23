@@ -1,0 +1,74 @@
+/* Navbar alap */
+.navbar {
+  background-color: #000;color:#fff;         /* fekete háttér */  
+  height: 56px;  
+  top: 0; left: 0; width: 100%; 
+  color: white;    
+  display: flex;
+  justify-content: space-between; /* bal és jobb oldal szét */
+  align-items: center;            /* függőlegesen középre */
+  padding: 10px 20px;
+  font-size: 20px;     /* nagyobb betűméret */
+  border-bottom: 1px solid #5b5b5b;
+  position: fixed;
+  display: flex; align-items: center;
+  z-index: 1000;              /* slider fölé tolja */
+  /*box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* árnyék, 3D hatás */ 
+  text-decoration: none;
+}
+/* Bal oldali rész (logó + menü) */
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 60px; /* távolság a linkek között */
+  
+}
+
+.navbar-left .logo {
+  font-weight: bold;
+  font-size: 36px;
+  color: white;
+}
+
+/* Jobb oldali navbar rész (ikonok) */
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+  padding: 0 80px; /* bal és jobb oldalon 40px térköz */
+  justify-content: space-between;
+}
+
+.navbar-right img {
+  /*filter: invert(1);  fehérre színezi az ikonokat, ha feketék */
+  cursor: pointer;
+  display: block; 
+  margin-right: 20px;
+  filter: brightness(0) invert(1); /* fehér ikon színe megmarad */
+  transition: filter 0.3s ease;
+  width: 28px;
+  height: 28px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none !important;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+  color: #c89c0a; /* finom arany árnyalat */
+}
+
+.navbar-right img:hover {
+  filter: brightness(0) invert(63%) sepia(85%) saturate(450%) hue-rotate(10deg);
+}
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+ #msg {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }

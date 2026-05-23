@@ -1,0 +1,130 @@
+:root{
+  --font-body: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --gold:#d4af37;
+  --border: rgba(255,255,255,.10);
+}
+
+html, body{
+  margin:0;
+  padding:0;
+  background:#000;
+  color:#fff;
+  font-family: var(--font-body);
+}
+
+/* ===== HERO ===== */
+.contact-hero{
+  padding: 90px 0 60px; /* navbar után kényelmes */
+  background: linear-gradient(180deg, #000 0%, #111 100%);
+}
+
+.contact-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.contact-inner h1{
+  font-family: var(--font-display);
+  font-size: 40px;
+  margin: 0 0 10px;
+  letter-spacing: .2px;
+}
+
+.contact-inner > p{
+  color: rgba(255,255,255,.72);
+  margin: 0 0 34px;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 680px;
+}
+
+/* ===== GRID (középre, nem full width) ===== */
+.contact-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  gap: 18px;
+  max-width: 760px;
+}
+
+.info-box{
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 18px 18px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.45);
+  transition: .2s ease;
+}
+
+.info-box:hover{
+  border-color: rgba(212,175,55,.35);
+  transform: translateY(-2px);
+}
+
+.info-box h3{
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--gold);
+  margin: 0 0 8px;
+}
+
+.info-box p{
+  margin: 4px 0;
+  font-size: 14px;
+  color: rgba(255,255,255,.78);
+}
+
+/* ===== MAP ===== */
+.map-section{
+  padding: 40px 0 90px;
+}
+
+.map-section h2{
+  font-family: var(--font-display);
+  font-size: 32px;
+  margin: 0 0 22px;
+  border-left: 5px solid var(--gold);
+  padding-left: 14px;
+}
+
+.map-wrapper{
+  width: 100%;
+  max-width: 900px;
+  height: 340px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 25px 60px rgba(0,0,0,.60);
+}
+
+.map-wrapper iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+@media (max-width:900px){
+  .contact-grid{
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+}
+
+@media (max-width:700px){
+  .contact-hero{
+    padding: 80px 0 50px;
+  }
+
+  .contact-inner{
+    padding: 0 16px;
+  }
+
+  .contact-inner h1{
+    font-size: 32px;
+  }
+
+  .map-wrapper{
+    height: 260px;
+  }
+}

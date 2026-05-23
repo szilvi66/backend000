@@ -1,0 +1,71 @@
+body {
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* Konténer */
+.carbox {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+/* Kártya — NINCS padding! */
+.carbox1 {
+    background: #191919;
+    width: 260px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+    text-align: left;
+    overflow: hidden;    /* így a kép is lekerekedik */
+    transition: none;    /* hover tiltva */
+}
+
+.carbox1:hover {
+    transform: none;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+}
+
+/* Kép — teljes szélesség */
+.carsbox {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 0; /* már nem kell saját lekerekítés */
+}
+
+/* Szövegblokk paddingje */
+.card-content {
+    padding: 18px;
+}
+
+.card-content p {
+    margin: 6px 0;
+    color: #dcdcdc;
+}
+
+.card-content p b {
+    color: #fff;
+    font-size: 17px;
+}
+
+/* Gomb */
+.yellowbutton {
+    display: inline-block;
+    background: #209631;
+    padding: 4px 14px;
+    border-radius: 6px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.yellowbutton:hover {
+    background: #74cc68;
+}

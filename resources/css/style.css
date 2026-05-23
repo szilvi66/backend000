@@ -1,0 +1,50 @@
+body{
+    margin: 0;   /* eltünteti a felső/oldalsó rést */
+    padding: 0;
+    color:rgb(0, 0, 0);
+    font-family:sans-serif;
+    padding-top: 56px;
+    background-color: dark;
+}
+
+/* Gomb arany színű */
+.yellowbutton {
+  background: linear-gradient(to bottom, #f9e97a, #c89c0a); /* arany hatás */
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 4px 12px;
+  border: 2px solid #b8860b; /* arany-barna keret */
+  border-radius: 8px; /* lekerekítés */
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+    margin-left: 165px;
+
+}
+
+.yellowbutton:hover {
+  background: linear-gradient(to bottom, #fff5a3, #d4a017);
+
+  box-shadow: 0 6px 10px rgba(0,0,0,0.4);
+}
+
+.yellowbutton:active {
+  background: linear-gradient(to bottom, #d4a017, #a67600);
+  transform: translateY(1px);
+
+}
+.carsbox {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+h2{
+    margin-top: 80px;
+    margin-left: 140px;
+    font-size: 32px;
+}
+p{
+    margin-right: 20px;
+      text-align: left;
+}

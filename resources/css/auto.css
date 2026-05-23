@@ -1,0 +1,166 @@
+body {
+      background-color: black;
+      color: white;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    /* --- Képes rész --- */
+    .kepauto {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      margin: 40px 60px 16px; /* kisebb tér az alján */
+    }
+
+    /* BAL: nagy kép */
+    .auto1 img {
+      display: block;
+      width: 800px;
+      height: 480px;
+      object-fit: cover;
+
+    }
+
+    /* JOBB: kis kép + gombok */
+    .auto3 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-left: 50px;
+    }
+
+    .auto3 img {
+      display: block;
+      width: 450px;
+      height: 240px;
+      object-fit: cover;
+
+    }
+
+    .auto3 button {
+      width: 450px;
+      height: 50px;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .auto3 button:first-of-type {
+      background-color: #c67b28;
+      color: white;
+    }
+
+    .auto3 button:last-of-type {
+      background-color: #444;
+      color: white;
+    }
+
+    .auto3 button:last-of-type:hover {
+      background-color: #ffdf80;
+      color: black;
+    }
+
+    /* --- Cím és ár --- */
+    .ar {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-left: 55px;
+      gap: 60px;
+      margin-bottom: 10px;
+    }
+
+    .ar1 {
+      font-size: 35px;
+      margin: 0;
+    }
+
+    .ar2 {
+      font-size: 35px;
+      color: #c67b28;
+      font-weight: bold;
+      margin: 0;
+    }
+    .autocska{
+        margin-bottom: 50px;
+    }
+
+    body {
+  background: #000;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Felső 3 adat (évjárat, stb.) */
+.autoadatok {
+  display: flex;
+  gap: 80px;
+  margin-left: 60px;
+  margin-top: 40px;
+}
+
+.autoadatok div p:first-child {
+  font-weight: normal;
+  color: #ccc;
+  margin: 0;
+}
+
+.autoadatok div p:last-child {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+/* Jellemzők cím */
+.jellemzok-cim {
+  margin: 40px 0 20px 60px;
+  font-size: 22px;
+}
+
+/* Két oszlopos elrendezés */
+.jellemzok-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 80px; /* tér a két tábla között */
+  margin-left: 60px;
+  margin-bottom: 80px;
+}
+
+/* Egyenkénti táblák */
+.jellemzok {
+  border-collapse: collapse;
+  color: #fff;
+}
+
+.jellemzok td {
+  padding: 6px 12px;
+  font-size: 15px;
+  border: none;
+}
+
+.jellemzok td:first-child {
+  font-weight: bold;
+  color: #fff;
+}
+
+.jellemzok td:last-child {
+  color: #ccc;
+}
+
+/* Kisebb képernyőn (pl. mobilon) egymás alá */
+@media (max-width: 768px) {
+  .autoadatok {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .jellemzok-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.egesz{
+    margin-left: 20px;
+}
