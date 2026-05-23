@@ -3,18 +3,22 @@ FROM php:8.2-cli
 RUN apt-get update && apt-get install -y \
     unzip \
     git \
+    curl \
     libzip-dev \
-    zip
+    zip \
+    && docker-php-ext-install pdo pdo_mysql zip
 
-RUN docker-php-ext-install pdo pdo_mysql zip
-
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
+COPY composer.json composer.lock ./
+
+RUN composer install --no-dev --no-scripts --prefer-dist --optimize-autoloader
+
 COPY . .
 
-RUN composer install --no-dev --optimize-autoloader
+RUN php artisan package:discover --ansi || true
 
 EXPOSE 10000
 
